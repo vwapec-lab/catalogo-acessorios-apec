@@ -1,24 +1,35 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-br from-[#001E50] via-[#003A70] to-[#00539F] text-white">
-      <div className="mx-auto max-w-7xl px-6 py-14 md:py-16">
-        <span className="rounded-full border border-white/30 px-4 py-2 text-sm font-medium">
-          Grupo Apec • Volkswagen
-        </span>
+    <section className="overflow-hidden bg-gradient-to-br from-[#001E50] via-[#003A70] to-[#00539F] text-white">
+      <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-10 md:py-12 lg:grid-cols-[1.05fr_0.95fr]">
+        <div>
+          <span className="inline-flex rounded-full border border-white/30 px-4 py-2 text-sm font-medium">
+            Grupo Apec • Volkswagen
+          </span>
 
-        <h2 className="mt-6 max-w-4xl text-4xl font-bold leading-tight md:text-5xl">
-          Catálogo Oficial
-          <br />
-          de Acessórios
-          <br />
-          Originais Volkswagen
-        </h2>
+          <h2 className="mt-5 max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
+            Catálogo Oficial de Acessórios Originais Volkswagen
+          </h2>
 
-        <p className="mt-6 max-w-2xl text-base leading-7 text-blue-100 md:text-lg">
-          Encontre acessórios desenvolvidos conforme os padrões de engenharia
-          Volkswagen para garantir segurança, design e compatibilidade com o
-          seu veículo.
-        </p>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-blue-100 md:text-lg">
+            Encontre acessórios desenvolvidos conforme os padrões de engenharia
+            Volkswagen para garantir segurança, design e compatibilidade com o
+            seu veículo.
+          </p>
+        </div>
+
+        <div className="relative hidden h-[280px] lg:block">
+          <Image
+            src="/hero-volkswagen.png"
+            alt="Volkswagen em destaque"
+            fill
+            priority
+            className="object-contain object-center"
+            sizes="45vw"
+          />
+        </div>
       </div>
     </section>
   );
