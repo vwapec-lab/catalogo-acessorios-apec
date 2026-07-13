@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import { Veiculo } from "@/lib/veiculo";
 
 interface Props {
@@ -12,19 +13,19 @@ export default function VehicleCard({ veiculo }: Props) {
       href={`/veiculo/${veiculo.slug}`}
       className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
     >
-      <div className="flex h-52 items-center justify-center bg-gradient-to-b from-slate-50 to-slate-100 p-6">
-        {veiculo.slug === "vw-collection" ? (
-          <div className="text-center text-xl font-bold text-[#001E50]">
-            VW Collection
-          </div>
-        ) : (
+      <div className="relative flex h-52 items-center justify-center bg-gradient-to-b from-slate-50 to-slate-100 p-6">
+        {veiculo.imagem ? (
           <Image
-            src={`/veiculos/${veiculo.slug}.png`}
+            src={veiculo.imagem}
             alt={veiculo.nome}
-            width={260}
-            height={140}
-            className="h-auto w-full max-w-[260px] object-contain transition duration-500 group-hover:scale-110"
+            fill
+            className="object-contain p-6 transition duration-500 group-hover:scale-110"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
+        ) : (
+          <span className="text-center text-lg font-bold text-[#001E50]">
+            {veiculo.nome}
+          </span>
         )}
       </div>
 
