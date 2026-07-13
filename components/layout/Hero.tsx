@@ -13,11 +13,9 @@ export default function Hero() {
             Catálogo Oficial de Acessórios Originais Volkswagen
           </h2>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-blue-100 md:text-lg">
-            Encontre acessórios desenvolvidos conforme os padrões de engenharia
-            Volkswagen para garantir segurança, design e compatibilidade com o
-            seu veículo.
-          </p>
+          <p className="mt-5 max-w-xl text-base leading-7 text-blue-100 md:text-lg">
+  Design, proteção e funcionalidade com acessórios originais Volkswagen.
+</p>
         </div>
 
         <div className="relative hidden h-[280px] lg:block">
