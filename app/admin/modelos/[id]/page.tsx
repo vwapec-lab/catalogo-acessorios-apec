@@ -512,13 +512,22 @@ export default function AdminModeloPage() {
                       </p>
                     )}
 
-                    <button
-                      type="button"
-                      onClick={() => excluirAcessorio(acessorio)}
-                      className="mt-5 w-full rounded-lg border border-red-300 px-4 py-2 font-semibold text-red-700 transition hover:bg-red-50"
-                    >
-                      Excluir
-                    </button>
+                    <div className="mt-5 flex gap-3">
+  <Link
+    href={`/admin/acessorios/${acessorio.id}`}
+    className="flex-1 rounded-lg bg-[#001E50] px-4 py-2 text-center font-semibold text-white transition hover:bg-blue-900"
+  >
+    Editar
+  </Link>
+
+  <button
+    type="button"
+    onClick={() => excluirAcessorio(acessorio)}
+    className="flex-1 rounded-lg border border-red-300 px-4 py-2 font-semibold text-red-700 transition hover:bg-red-50"
+  >
+    Excluir
+  </button>
+</div>
                   </div>
                 </article>
               ))}
