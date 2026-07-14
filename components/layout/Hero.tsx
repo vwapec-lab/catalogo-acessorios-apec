@@ -1,33 +1,48 @@
-import Image from "next/image";
-
 export default function Hero() {
+  const dataAtual = new Date();
+
+  const mesAno = dataAtual.toLocaleDateString("pt-BR", {
+    month: "long",
+    year: "numeric",
+  });
+
+  const mesAnoFormatado =
+    mesAno.charAt(0).toUpperCase() + mesAno.slice(1);
+
   return (
-    <section className="overflow-hidden bg-gradient-to-br from-[#001E50] via-[#003A70] to-[#00539F] text-white">
-      <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-10 md:py-12 lg:grid-cols-[1.05fr_0.95fr]">
+    <section className="bg-gradient-to-br from-[#001E50] via-[#003A70] to-[#00539F] text-white">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 lg:grid-cols-2">
+
         <div>
-          <span className="inline-flex rounded-full border border-white/30 px-4 py-2 text-sm font-medium">
+          <span className="rounded-full border border-white/30 px-4 py-2 text-sm font-medium">
             Grupo Apec • Volkswagen
           </span>
 
-          <h2 className="mt-5 max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
-            Catálogo Oficial de Acessórios Originais Volkswagen
+          <p className="mt-4 text-sm font-semibold tracking-wide text-blue-200">
+            {mesAnoFormatado}
+          </p>
+
+          <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
+            Catálogo Oficial de
+            <br />
+            Acessórios Originais
+            <br />
+            Volkswagen
           </h2>
 
-          <p className="mt-5 max-w-xl text-base leading-7 text-blue-100 md:text-lg">
-  Design, proteção e funcionalidade com acessórios originais Volkswagen.
-</p>
+          <p className="mt-6 max-w-xl text-xl leading-8 text-blue-100">
+            Design, proteção e funcionalidade com acessórios originais Volkswagen.
+          </p>
         </div>
 
-        <div className="relative hidden h-[280px] lg:block">
-          <Image
+        <div className="flex justify-center lg:justify-end">
+          <img
             src="/hero-volkswagen.png"
-            alt="Volkswagen em destaque"
-            fill
-            priority
-            className="object-contain object-center"
-            sizes="45vw"
+            alt="Catálogo de Acessórios Volkswagen"
+            className="w-full max-w-xl rounded-lg shadow-2xl"
           />
         </div>
+
       </div>
     </section>
   );
