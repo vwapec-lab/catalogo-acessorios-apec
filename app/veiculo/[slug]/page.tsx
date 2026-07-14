@@ -64,6 +64,15 @@ export default async function PaginaVeiculo({
   params,
 }: PaginaVeiculoProps) {
   const { slug } = await params;
+  const dataAtual = new Date();
+
+const mesAno = dataAtual.toLocaleDateString("pt-BR", {
+  month: "long",
+  year: "numeric",
+});
+
+const mesAnoFormatado =
+  mesAno.charAt(0).toUpperCase() + mesAno.slice(1);
 
   const { data: modeloData, error: modeloError } = await supabase
     .from("modelos")
@@ -134,9 +143,15 @@ export default async function PaginaVeiculo({
       <section className="overflow-hidden bg-gradient-to-br from-[#001E50] to-[#00539F] text-white">
         <div className="mx-auto grid min-h-[390px] max-w-7xl items-center gap-10 px-6 py-14 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-100">
-              Acessórios Originais Volkswagen
-            </p>
+            <div className="flex flex-wrap items-center gap-3">
+  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-100">
+    Acessórios Originais Volkswagen
+  </p>
+
+  <span className="rounded-full border border-white/30 px-3 py-1 text-sm font-semibold text-blue-100">
+    {mesAnoFormatado}
+  </span>
+</div>
 
             <h1 className="mt-4 text-5xl font-bold md:text-6xl">
               {modelo.nome}
